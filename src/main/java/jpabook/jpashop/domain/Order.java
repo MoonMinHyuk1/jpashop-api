@@ -20,7 +20,7 @@ public class Order {
     @Column(name = "order_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) //지연로딩은 db 에서 가져올때 Order 만 가져오고 Member 는 건들지 않음(프록시 객체로 넣어둠 ByteBuddyInterceptor)
     @JoinColumn(name = "member_id") //연관관계의 주인일때 (외래키가 있는 테이블)
     private Member member;
 
